@@ -6,9 +6,14 @@ namespace Aplication
 {
     public class Generator
     {
-        public Plan Generate(List<Lesson> lessons)
+        public List<Plan> Generate(List<PlanPattern> plansPatterns)
         {
-            return new Plan(GetGrid(lessons, 3, 3, 2323));
+            var plans = new List<Plan>();
+            foreach (var planPattern in plansPatterns)
+            {
+                plans.Add(new Plan(GetGrid(planPattern.Lessons, planPattern.Y, planPattern.X, planPattern.Seed)));
+            }
+            return plans;
         }
 
         private Lesson[,] GetGrid(List<Lesson> lessons,int height,int with,int seed)

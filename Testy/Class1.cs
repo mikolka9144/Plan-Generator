@@ -13,7 +13,7 @@ namespace Tests
         {
             var generator = new Generator();
 
-            Action action = () => generator.Generate(new List<Lesson>());
+            Action action = () => generator.Generate(new List<PlanPattern>() { new PlanPattern(3, 3, 123, new List<Lesson>()) });
 
             Assert.Throws<ArgumentOutOfRangeException>(action);
         }
@@ -23,7 +23,11 @@ namespace Tests
         {
             var generator = new Generator();
 
-            var plan = generator.Generate(new List<Lesson>() { Lesson.Math,Lesson.Polish,Lesson.History,Lesson.english});
+            var plan = generator.Generate(new List<PlanPattern>(){new PlanPattern(3,3,123,new List<Lesson>()
+            { Lesson.Math,Lesson.Polish,Lesson.History,Lesson.english
+              ,Lesson.Math
+
+            })});
 
         }
     }
