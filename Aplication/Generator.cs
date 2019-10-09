@@ -1,11 +1,19 @@
 ﻿using Domain;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Aplication
 {
-    public class Generator
+    public class BaseGenerator
     {
+        public BaseGenerator(IPlanPlugin[] plugins)
+        {
+            Plugins = plugins;
+        }
+
+        public IPlanPlugin[] Plugins { get; }
+
         public List<Plan> Generate(List<PlanPattern> plansPatterns)
         {
             var plans = new List<Plan>();
@@ -25,11 +33,32 @@ namespace Aplication
             {
                 for (int x = 0; x < with; x++)
                 {
-                    var pos = randomizer.Next(0, lessons.Count - 1);
+                    int pos;
+                    int probe = 1;
+                    do
+                    {
+                        pos = randomizer.Next(0, lessons.Count - 1);
+                        if (Plugins.All(s =>
+                                            s.IsLessonPlaceValid(new Plan(grid), (x, y), (with, height), lessons[pos])))
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            if (probe == 3) 
+                            {
+                                lessons.Add(Lesson.Empty);
+                                pos = lessons.Count - 1;
+                                break; 
+                            };
+                            probe++;
+                        }
+
+                    } while (true);
                     grid[x, y] = lessons[pos];
                     lessons.RemoveAt(pos);
                     if (lessons.Count == 0) return grid;
-                }
+                }                 
             }
             return grid;
         }
