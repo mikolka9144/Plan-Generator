@@ -11,6 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplication", "Aplication\Ap
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testy", "Testy\Testy.csproj", "{BDBBDA32-DE7D-48A8-8507-CCBCE0FEB3D3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{18D21747-3118-4411-80F2-A5ACACB4B98E} = {18D21747-3118-4411-80F2-A5ACACB4B98E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test runner", "Test runner\Test runner.csproj", "{97156561-B3B1-43E3-821F-A765E9B6C7AC}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -19,7 +22,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test runner", "Test runner\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{930E806A-756A-4A14-871F-AED0D6224CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructuredApplication", "StructuredApplication\StructuredApplication.csproj", "{18D21747-3118-4411-80F2-A5ACACB4B98E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StructuredApplication", "StructuredApplication\StructuredApplication.csproj", "{18D21747-3118-4411-80F2-A5ACACB4B98E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{0889255D-53D8-46FC-8C74-3B46FC491268} = {0889255D-53D8-46FC-8C74-3B46FC491268}
 	EndProjectSection

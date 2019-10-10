@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Aplication
 {
-    public class BaseGenerator
+    public class Generator
     {
-        public BaseGenerator(IPlanPlugin[] plugins)
+        public Generator(IPlanPlugin[] plugins)
         {
             Plugins = plugins;
         }

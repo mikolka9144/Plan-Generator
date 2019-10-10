@@ -66,13 +66,13 @@
     <Analyzer Include="..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Aplication\Aplication.csproj">
-      <Project>{6E6C2DFA-DCF5-4C44-96B5-53F38936BE16}</Project>
-      <Name>Aplication</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{0889255D-53D8-46FC-8C74-3B46FC491268}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StructuredApplication\StructuredApplication.csproj">
+      <Project>{18d21747-3118-4411-80f2-a5acacb4b98e}</Project>
+      <Name>StructuredApplication</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

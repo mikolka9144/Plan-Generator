@@ -5,15 +5,15 @@ using System.Collections.Generic;
 
 namespace StructuredApplication
 {
-    class Generator
+    public class Generator
     {
         public Generator()
         {
             var container = new Container(new PluginFinder());
-            generator = container.GetInstance<BaseGenerator>();
+            generator = container.GetInstance<Aplication.Generator>();
         }
 
-        public BaseGenerator generator { get; }
+        public Aplication.Generator generator { get; }
 
         public List<Plan> Generate(List<PlanPattern> plansPatterns)
         {
